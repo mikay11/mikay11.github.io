@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <rect width="1600" height="900" fill="#1A1A1A"/>
+  <circle cx="200" cy="180" r="120" fill="#EE2A7B"/>
+  <circle cx="1480" cy="760" r="160" fill="#EE2A7B" opacity="0.55"/>
+  <rect x="220" y="560" width="240" height="120" fill="url(#dotpat)"/>
+  <defs>
+    <pattern id="dotpat" width="26" height="26" patternUnits="userSpaceOnUse">
+      <rect width="26" height="26" fill="#1A1A1A"/>
+      <circle cx="13" cy="13" r="5" fill="#FFFFFF"/>
+    </pattern>
+  </defs>
+  <rect x="0" y="0" width="1600" height="900" fill="#1A1A1A" opacity="0.0"/>
+  <circle cx="800" cy="450" r="120" fill="none" stroke="#FFFFFF" stroke-width="6"/>
+  <path d="M760 380 L900 450 L760 520 Z" fill="#FFFFFF"/>
+  <text x="800" y="700" font-family="Anton, Arial" font-size="42" fill="#FFFFFF" text-anchor="middle" letter-spacing="6">SHOWREEL — 2026</text>
+</svg>

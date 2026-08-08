@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work — Your Name</title>
+  <meta name="description" content="Selected work of Your Name — UX/UI designer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- ===== Barbie theme decorations (work.html only) ===== -->
+  <style>
+    body {
+      background:
+        radial-gradient(circle at 8% 10%, rgba(255, 182, 212, 0.35), transparent 38%),
+        radial-gradient(circle at 92% 28%, rgba(255, 214, 232, 0.40), transparent 42%),
+        radial-gradient(circle at 15% 80%, rgba(255, 182, 212, 0.30), transparent 40%),
+        radial-gradient(circle at 88% 88%, rgba(255, 214, 232, 0.35), transparent 40%),
+        linear-gradient(180deg, #fff7fa 0%, #ffeef5 50%, #fff9fc 100%);
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(255, 122, 176, 0.12) 2.5px, transparent 2.5px);
+      background-size: 36px 36px;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(rgba(255, 105, 180, 0.45) 4px, transparent 4px),
+        radial-gradient(rgba(255, 192, 218, 0.6) 3px, transparent 3px),
+        radial-gradient(rgba(255, 105, 180, 0.4) 2px, transparent 2px),
+        radial-gradient(rgba(255, 192, 218, 0.55) 2.5px, transparent 2.5px);
+      background-position: 6% 22%, 90% 12%, 76% 64%, 12% 66%, 58% 34%, 34% 84%, 66% 8%, 22% 40%, 84% 88%, 44% 56%;
+      background-size: 18px 18px, 26px 26px, 30px 30px, 22px 22px;
+      background-repeat: no-repeat;
+      animation: twinkle 4s ease-in-out infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    .page-hero { position: relative; }
+    .page-hero::before {
+      content: '💗';
+      position: absolute;
+      top: 18px; left: -30px;
+      font-size: 2.4rem;
+      animation: float-heart 5s ease-in-out infinite;
+    }
+    .page-hero::after {
+      content: '💖';
+      position: absolute;
+      bottom: 6px; right: 4%;
+      font-size: 2rem;
+      animation: float-heart 6s ease-in-out 1s infinite;
+    }
+
+    @keyframes float-heart {
+      0%, 100% { transform: translateY(0) rotate(-8deg); }
+      50% { transform: translateY(-16px) rotate(8deg); }
+    }
+
+    .page-hero .display { text-shadow: 0 4px 24px rgba(255, 105, 180, 0.35); }
+
+    .video-wrap {
+      box-shadow: 0 18px 50px rgba(255, 105, 180, 0.35);
+      outline: 1px solid rgba(255, 182, 212, 0.6);
+    }
+
+    .work-section-title::after { content: ' 🌸'; font-size: 1.3rem; }
+
+    .work-section-head { border-bottom-color: rgba(255, 105, 180, 0.45); }
+
+    .filter-btn:hover { border-color: var(--pink); box-shadow: 0 4px 14px rgba(255, 105, 180, 0.25); }
+    .filter-btn.active { background: var(--pink); border-color: var(--pink); }
+
+    .work-item .work-thumb { box-shadow: 0 8px 24px rgba(255, 122, 176, 0.16); }
+
+    .work-tags .tag { background: #ffeaf3; color: #d63384; }
+
+    .footer { border-top: 3px solid #ff9ecb; }
+  </style>
+</head>
+<body>
+
+  <!-- ================= NAVIGATION ================= -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <!-- CHANGE: replace "Your Name" with your name -->
+      <a class="logo" href="index.html">WELCOME GIRLIES!<span>.</span></a>
+      <nav class="menu" id="menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="work.html" class="active">Work</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-pill" href="contact.html">Let's Talk <span class="arrow">→</span></a>
+        <button class="burger" id="burger" aria-label="Toggle menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= PAGE HERO ================= -->
+  <section class="page-hero" style="padding: 64px 0 90px;">
+    <div class="container">
+      <span class="eyebrow reveal">Portfolio</span>
+      <h1 class="display reveal reveal-delay-1">Selected <span class="serif-italic">work.</span></h1>
+      <p class="lead reveal reveal-delay-2" style="margin-top:18px;">
+  A showcase of my work, projects, and creative outputs.
+  Scroll through to discover the different things I've built and designed.
+</p>
+    </div>
+  </section>
+
+  <!-- ================= SHOWREEL (VIDEO) =================
+       ▶ SWAP VIDEO: drop your showreel into assets/videos/reel.mp4
+         (or change the src below). The poster image can be replaced
+         with a frame from your video. -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="video-wrap reveal">
+        <span class="video-tag">My First Ever Film Making Editing</span>
+        <video controls preload="none" poster="assets/images/fb-video.mp4"
+          <source src="assets/videos/fb-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="filters reveal" id="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="leadership">Leadership</button>
+        <button class="filter-btn" data-filter="make-up">Make-up</button>
+        <button class="filter-btn" data-filter="video-editing">Video Editing</button>
+        <button class="filter-btn" data-filter="affiliates">Affiliate</button>
+        <button class="filter-btn" data-filter="ui-ux">UI/UX Design</button>
+      </div>
+
+      <!-- ======= LEADERSHIP GALLERY ======= -->
+      <div class="work-section reveal" data-category="leadership">
+        <div class="work-section-head">
+          <h2 class="work-section-title">Leadership</h2>
+          <span class="work-section-note">Council work, events &amp; programs</span>
+        </div>
+        <div class="work-grid g-gal">
+
+          <a class="work-item reveal" href="#" data-category="leadership">
+            <div class="work-thumb"><img src="assets/images/gallery-1.jpg" alt="Data Secure Records Management System"></div>
+            <div class="work-info">
+              <div>
+                <h3>Startup: "Tangub City Hardware: Data Secure Records Management System"</h3>
+                <div class="work-tags"><span class="tag">Competition</span><span class="tag">2nd Place</span></div>
+              </div>
+              <span class="year">2025</span>
+            </div>
+            <p class="work-desc">A data-secure records management platform built for Tangub City Hardware. Won 2nd place with the Institute of Student Council members as team Quantom Thinkers.</p>
+          </a>
+
+          <a class="work-item reveal" href="#" data-category="leadership">
+            <div class="work-thumb"><img src="assets/images/gallery-2.jpg" alt="With the Mayor of Tangub"></div>
+            <div class="work-info">
+              <div>
+                <h3>With the Mayor of Tangub</h3>
+                <div class="work-tags"><span class="tag">Civic</span><span class="tag">Recognition</span></div>
+              </div>
+              <span class="year">2025</span>
+            </div>
+            <p class="work-desc">Taking a picture with the Mayor of Tangub, Sabiniano S. Canama.</p>
+          </a>
+
+          <a class="work-item reveal" href="#" data-category="leadership">
+            <div class="work-thumb"><img src="assets/images/gallery-3.jpg" alt="SINAG 2025 Opening Salvo"></div>
+            <div class="work-info">
+              <div>
+                <h3>SINAG 2025 (Opening Salvo)</h3>
+                <div class="work-tags"><span class="tag">Event</span><span class="tag">Dance</span></div>
+              </div>
+              <span class="year">2025</span>
+            </div>
+            <p class="work-desc">The Institute of Student Council Officers participated in the SINAG 2025 Opening Salvo where we showcased our skills in dancing.</p>
+          </a>
+
+          <a class="work-item reveal" href="#" data-category="leadership">
+            <div class="work-thumb"><img src="assets/images/gallery-4.jpg" alt="SINAG 2025 Opening Salvo"></div>
+            <div class="work-info">
+              <div>
+                <h3>SINAG 2025 (Opening Salvo)</h3>
+                <div class="work-tags"><span class="tag">Event</span><span class="tag">Dance</span></div>
+              </div>
+              <span class="year">2025</span>
+            </div>
+            <p class="work-desc">The Institute of Student Council Officers participated in the SINAG 2025 Opening Salvo where we showcased our skills in dancing.</p>
+          </a>
+
+          <a class="work-item reveal" href="#" data-category="leadership">
+            <div class="work-thumb"><img src="assets/images/gallery-5.jpg" alt="Liquidation Reports"></div>
+            <div class="work-info">
+              <div>
+                <h3>LIQUIDATION REPORTS</h3>
+                <div class="work-tags"><span class="tag">Finance</span><span class="tag">Reports</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+            <p class="work-desc">Prepared and managed the liquidation reports to ensure every transaction was properly documented and accounted for. This role required careful tracking of expenses, receipts, and budget allocations to maintain transparency in our financial records. It was a responsibility that strengthened my attention to detail and accountability in handling organizational funds.</p>
+          </a>
+
+          <a class="work-item reveal" href="#" data-category="leadership">
+            <div class="work-thumb"><img src="assets/images/gallery-6.jpg" alt="Act of Mercy"></div>
+            <div class="work-info">
+              <div>
+                <h3>ACT OF MERCY</h3>
+                <div class="work-tags"><span class="tag">Community</span><span class="tag">Outreach</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+            <p class="work-desc">Act of Mercy that we conducted to help the people in need within Tangub City. We were involved in organizing and distributing essential items, such as food, clothing, and hygiene products, to our fellow tangubanons. This experience allowed me to contribute to the community and make a positive impact on the lives of others.</p>
+          </a>
+
+          <a class="work-item reveal" href="#" data-category="leadership">
+            <div class="work-thumb"><img src="assets/images/gallery-7.jpg" alt="MathCalcu System"></div>
+            <div class="work-info">
+              <div>
+                <h3>MathCalcu System</h3>
+                <div class="work-tags"><span class="tag">Academic</span><span class="tag">Web App</span></div>
+              </div>
+              <span class="year">2025</span>
+            </div>
+            <p class="work-desc">A leader in making the MathCalcu System, a platform that helps students to calculate their mathematical problems specifically in Calculus course, with our very stunning instructor Miss K.</p>
+          </a>
+
+          <a class="work-item reveal" href="#" data-category="leadership">
+            <div class="work-thumb"><img src="assets/images/gallery-8.jpg" alt="Nutrition Month Celebration"></div>
+            <div class="work-info">
+              <div>
+                <h3>NUTRITION MONTH CELEBRATION</h3>
+                <div class="work-tags"><span class="tag">Event</span><span class="tag">ISC</span></div>
+              </div>
+              <span class="year">2025</span>
+            </div>
+            <p class="work-desc">With my fellow ISC & SRO members, participated and organized the Nutrition Month Celebration together with the whole students of TCGC.</p>
+          </a>
+
+          <a class="work-item reveal" href="#" data-category="leadership">
+            <div class="work-thumb"><img src="assets/images/gallery-9.jpg" alt="Gallery 9"></div>
+            <div class="work-info">
+              <div>
+                <h3>TROJANS DAYS 2025</h3>
+                <div class="work-tags"><span class="tag">Event</span><span class="tag">ISC</span></div>
+              </div>
+              <span class="year">2025</span>
+            </div>
+            <p class="work-desc">Trojans Days 2025 is an exclusive three-day event held once every school year for the students, faculty, and staff of the Institute of Computer Studies. Organized by the ISC in collaboration with the SRO members, the event was created to strengthen camaraderie among ICS members while promoting academic growth and student engagement.</p>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ======= MAKE-UP GALLERY ======= -->
+      <div class="work-section reveal" data-category="make-up">
+        <div class="work-section-head">
+          <h2 class="work-section-title">Make-up</h2>
+          <span class="work-section-note">Looks &amp; creative sessions</span>
+        </div>
+        <div class="work-grid g-makeup">
+
+          <a class="work-item reveal" href="#" data-category="make-up">
+            <div class="work-thumb"><img src="assets/images/makeup-1.jpg" alt="Make-up 1"></div>
+            <div class="work-info">
+              <div>
+                <h3>DARK EYES MAKE-UP</h3>
+                <div class="work-tags"><span class="tag">Creative</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </a>
+
+          <a class="work-item reveal" href="#" data-category="make-up">
+            <div class="work-thumb"><img src="assets/images/makeup-2.jpg" alt="Make-up 2"></div>
+            <div class="work-info">
+              <div>
+                <h3>SINAG 2026 (FINAL DAY)</h3>
+                <div class="work-tags"><span class="tag">Creative</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </a>
+
+          <a class="work-item reveal" href="#" data-category="make-up">
+            <div class="work-thumb"><img src="assets/images/makeup-3.jpg" alt="Make-up 3"></div>
+            <div class="work-info">
+              <div>
+                <h3>SINAG 2026 (OPENING PARADE)</h3>
+                <div class="work-tags"><span class="tag">Creative</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </a>
+
+          <a class="work-item reveal" href="#" data-category="make-up">
+            <div class="work-thumb"><img src="assets/images/makeup-4.jpg" alt="Make-up 4"></div>
+            <div class="work-info">
+              <div>
+                <h3>SINAG 2026 (MEN RETRO INSPIRED)</h3>
+                <div class="work-tags"><span class="tag">Creative</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </a>
+
+          <a class="work-item reveal" href="#" data-category="make-up">
+            <div class="work-thumb"><img src="assets/images/makeup-5.jpg" alt="Make-up 5"></div>
+            <div class="work-info">
+              <div>
+                <h3>SINAG 2026 (WOMEN RETRO INSPIRED)</h3>
+                <div class="work-tags"><span class="tag">Creative</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </a>
+
+          <a class="work-item reveal" href="#" data-category="make-up">
+            <div class="work-thumb"><img src="assets/images/makeup-6.jpg" alt="Make-up 6"></div>
+            <div class="work-info">
+              <div>
+                <h3>SINULOG 2025</h3>
+                <div class="work-tags"><span class="tag">Creative</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </a>
+
+          <a class="work-item reveal" href="#" data-category="make-up">
+            <div class="work-thumb"><img src="assets/images/makeup-7.jpg" alt="Make-up 7"></div>
+            <div class="work-info">
+              <div>
+                <h3>SINAG 2025 (CLASSIC LOOK)</h3>
+                <div class="work-tags"><span class="tag">Creative</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </a>
+
+          <div class="work-item reveal" data-category="make-up">
+            <div class="work-thumb">
+              <video controls preload="metadata" playsinline src="assets/videos/sinulog.mp4" aria-label="Sinulog video"></video>
+            </div>
+            <div class="work-info">
+              <div>
+                <h3>Sinulog 2025</h3>
+                <div class="work-tags"><span class="tag">Creative</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </div>
+
+          <div class="work-item reveal" data-category="make-up">
+            <div class="work-thumb">
+              <video controls preload="metadata" playsinline src="assets/videos/facebook-reel.mp4" aria-label="Facebook Reel"></video>
+            </div>
+            <div class="work-info">
+              <div>
+                <h3>GET READY WITH MIKAY LOOK! </h3>
+                <div class="work-tags"><span class="tag">Creative</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ======= VIDEO EDITING GALLERY ======= -->
+      <div class="work-section reveal" data-category="video-editing">
+        <div class="work-section-head">
+          <h2 class="work-section-title">Video Editing</h2>
+          <span class="work-section-note">Edits, vlogs &amp; event coverage</span>
+        </div>
+        <div class="work-grid g-video">
+
+          <div class="work-item reveal" data-category="video-editing">
+            <div class="work-thumb">
+              <video controls preload="metadata" playsinline src="assets/videos/vid1.mp4" aria-label="Video 1"></video>
+            </div>
+            <div class="work-info">
+              <div>
+                <h3>Video 1</h3>
+                <div class="work-tags"><span class="tag">Video</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </div>
+
+          <div class="work-item reveal" data-category="video-editing">
+            <div class="work-thumb">
+              <video controls preload="metadata" playsinline src="assets/videos/vid2.mp4" aria-label="Video 2"></video>
+            </div>
+            <div class="work-info">
+              <div>
+                <h3>Video 2</h3>
+                <div class="work-tags"><span class="tag">Video</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </div>
+
+          <div class="work-item reveal" data-category="video-editing">
+            <div class="work-thumb">
+              <video controls preload="metadata" playsinline src="assets/videos/vid3.mp4" aria-label="Video 3"></video>
+            </div>
+            <div class="work-info">
+              <div>
+                <h3>Video 3</h3>
+                <div class="work-tags"><span class="tag">Video</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </div>
+
+          <div class="work-item reveal" data-category="video-editing">
+            <div class="work-thumb">
+              <video controls preload="metadata" playsinline src="assets/videos/peace.mp4" aria-label="Peace"></video>
+            </div>
+            <div class="work-info">
+              <div>
+                <h3>Peace</h3>
+                <div class="work-tags"><span class="tag">Video</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </div>
+
+          <div class="work-item reveal" data-category="video-editing">
+            <div class="work-thumb">
+              <video controls preload="metadata" playsinline src="assets/videos/day-in-a-life.mp4" aria-label="Day in a Life"></video>
+            </div>
+            <div class="work-info">
+              <div>
+                <h3>Day in a Life</h3>
+                <div class="work-tags"><span class="tag">Video</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ======= AFFILIATE GALLERY ======= -->
+      <div class="work-section reveal" data-category="affiliates">
+        <div class="work-section-head">
+          <h2 class="work-section-title">Affiliate</h2>
+          <span class="work-section-note">Brand &amp; partner projects</span>
+        </div>
+        <div class="work-grid g-aff">
+
+        
+
+          <div class="work-item reveal" data-category="affiliates">
+            <div class="work-thumb">
+              <video controls preload="metadata" playsinline src="assets/videos/A1.mp4" aria-label="A1"></video>
+            </div>
+            <div class="work-info">
+              <div>
+                <h3>Affiliate 1</h3>
+                <div class="work-tags"><span class="tag">Affiliate</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </div>
+
+          <div class="work-item reveal" data-category="affiliates">
+            <div class="work-thumb">
+              <video controls preload="metadata" playsinline src="assets/videos/A2.mp4" aria-label="A2"></video>
+            </div>
+            <div class="work-info">
+              <div>
+                <h3>Affiliate 2</h3>
+                <div class="work-tags"><span class="tag">Affiliate</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </div>
+
+          <div class="work-item reveal" data-category="affiliates">
+            <div class="work-thumb">
+              <video controls preload="metadata" playsinline src="assets/videos/A3.mp4" aria-label="A3"></video>
+            </div>
+            <div class="work-info">
+              <div>
+                <h3>Affiliate 3</h3>
+                <div class="work-tags"><span class="tag">Affiliate</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ======= UI/UX GALLERY ======= -->
+      <div class="work-section reveal" data-category="ui-ux">
+        <div class="work-section-head">
+          <h2 class="work-section-title">UI/UX Design</h2>
+          <span class="work-section-note">Interfaces &amp; web experiments</span>
+        </div>
+        <div class="work-grid g-ui">
+
+  
+
+
+          <div class="work-item reveal" data-category="ui-ux">
+            <div class="work-thumb">
+              <video controls preload="metadata" playsinline src="assets/videos/uiux-record.mp4" aria-label="UI/UX Screen Recording"></video>
+            </div>
+            <div class="work-info">
+              <div>
+                <h3>Tracklet Application</h3>
+                <div class="work-tags"><span class="tag">Figma</span><span class="tag">Application</span><span class="tag">Expense Tracker </span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </div>
+
+          <div class="work-item reveal" data-category="ui-ux">
+            <div class="work-thumb">
+              <video controls preload="metadata" playsinline src="assets/videos/uiux-record-2.mp4" aria-label="UI/UX Screen Recording 2"></video>
+            </div>
+            <div class="work-info">
+              <div>
+                <h3>Groupify System</h3>
+                <div class="work-tags"><span class="tag">Software Engineering</span><span class="tag">Figma</span><span class="tag">UI/UX</span><span class="tag">Group Management</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </div>
+
+          <div class="work-item reveal" data-category="ui-ux">
+            <div class="work-thumb">
+              <video controls preload="metadata" playsinline src="assets/videos/uiux-record-3.mp4" aria-label="UI/UX Screen Recording 3"></video>
+            </div>
+            <div class="work-info">
+              <div>
+                <h3>Sports Catalog</h3>
+                <div class="work-tags"><span class="tag">Layout Design</span><span class="tag">Canva</span><span class="tag">Sports</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </div>
+
+          <div class="work-item reveal" data-category="ui-ux">
+            <div class="work-thumb">
+              <video controls preload="metadata" playsinline src="assets/videos/uiux-record-4.mp4" aria-label="UI/UX Screen Recording 4"></video>
+            </div>
+            <div class="work-info">
+              <div>
+                <h3>API Project</h3>
+                <div class="work-tags"><span class="tag">UI/UX</span><span class="tag">Canva</span><span class="tag">API Project</span><span class="tag">rickandmorty</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </div>
+
+          <div class="work-item reveal" data-category="ui-ux">
+            <div class="work-thumb">
+              <video controls preload="metadata" playsinline src="assets/videos/uiux-record-5.mp4" aria-label="UI/UX Screen Recording 5"></video>
+            </div>
+            <div class="work-info">
+              <div>
+                <h3>TRACKLET</h3>
+                <div class="work-tags"><span class="tag">UI/UX</span><span class="tag">Canva</span><span class="tag">Structure</span><span class="tag">PowerPoint Presentation</span></div>
+              </div>
+              <span class="year">2026</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <h2>Want results like these? Let's <span class="serif-italic" style="color:#fff;">build.</span></h2>
+        <p style="max-width:52ch; opacity:.9;">Your project could be the next one in this grid.</p>
+        <a class="btn btn-ghost" href="contact.html">Start a Project <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <h3>Let's work <span>together.</span></h3>
+        <nav class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="work.html">Work</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Michaela Denise Ong. All rights reserved.</span>
+        <span>Coffee or tea?</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
