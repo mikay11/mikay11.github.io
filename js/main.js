@@ -6,17 +6,20 @@ document.addEventListener('DOMContentLoaded', function () {
   // ---------- Mobile menu ----------
   var burger = document.getElementById('burger');
   var menu = document.getElementById('menu');
-  if (burger && menu) {
-    burger.addEventListener('click', function () {
-      burger.classList.toggle('open');
-      menu.classList.toggle('open');
-    });
-    menu.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        burger.classList.remove('open');
-        menu.classList.remove('open');
+  if (!window.__burgerBound) {
+    window.__burgerBound = true;
+    if (burger && menu) {
+      burger.addEventListener('click', function () {
+        burger.classList.toggle('open');
+        menu.classList.toggle('open');
       });
-    });
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          burger.classList.remove('open');
+          menu.classList.remove('open');
+        });
+      });
+    }
   }
 
   // ---------- Navbar dropdowns (Services + Projects) ----------
