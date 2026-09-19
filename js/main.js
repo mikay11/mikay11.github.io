@@ -19,6 +19,29 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // ---------- Navbar dropdown (Services) ----------
+  var dropdownButton = document.querySelector('#dropdownBtn');
+  var dropdownMenu = document.querySelector('#dropdownMenu');
+  if (dropdownButton && dropdownMenu && !window.__navDropdownBound) {
+    window.__navDropdownBound = true;
+
+    dropdownButton.addEventListener('click', function (event) {
+      event.stopPropagation();
+      dropdownMenu.classList.toggle('show');
+      dropdownButton.classList.toggle('open');
+      var isOpen = dropdownMenu.classList.contains('show');
+      dropdownButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!dropdownMenu.contains(event.target) && !dropdownButton.contains(event.target)) {
+        dropdownMenu.classList.remove('show');
+        dropdownButton.classList.remove('open');
+        dropdownButton.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
   // ---------- Footer year ----------
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
