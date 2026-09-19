@@ -213,9 +213,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .dd-arrow {
   font-size: 0.7rem;
   color: var(--pink);
-  transition: transform 0.25s ease;
 }
-.dd-btn.open .dd-arrow { transform: rotate(180deg); }
 
 .dropdown-menu {
   display: none;
@@ -247,13 +245,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .dropdown-menu a:hover { background: var(--pink); color: var(--white); }
 .dropdown-menu a::after { display: none; }
 
-/* Desktop hover: moving the cursor over "Services" opens the menu,
-   so it is easy to see. Click-to-toggle (js/main.js) still works. */
+/* Desktop hover is handled by js/main.js so the open state, the
+   pink underline and the ▼→▲ arrow always stay in sync. This bridge
+   extends the hover area below the button so the cursor can travel
+   from the button down into the menu. */
 @media (hover: hover) and (pointer: fine) {
-  .dropdown:hover > .dropdown-menu,
-  .dropdown:focus-within > .dropdown-menu { display: block; }
-  .dropdown:hover > .dd-btn { color: var(--pink); }
-  .dropdown:hover > .dd-btn::after { width: 100%; }
   .dropdown::after {
     content: '';
     position: absolute;

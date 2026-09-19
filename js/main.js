@@ -26,29 +26,55 @@ document.addEventListener('DOMContentLoaded', function () {
     var button = document.querySelector(buttonId);
     var menu = document.querySelector(menuId);
     if (!button || !menu) return;
-    navDropdowns.push({ button: button, menu: menu });
+    var holder = button.closest('.dropdown');
+    var arrow = button.querySelector('.dd-arrow');
+    var dd = { button: button, menu: menu, pinned: false };
+    navDropdowns.push(dd);
+
+    function setOpen(open) {
+      menu.classList.toggle('show', open);
+      button.classList.toggle('open', open);
+      button.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (arrow) arrow.textContent = open ? '\u25B2' : '\u25BC';
+    }
 
     button.addEventListener('click', function (event) {
       event.stopPropagation();
-      navDropdowns.forEach(function (dd) {
-        if (dd.button !== button && dd.menu.classList.contains('show')) {
-          dd.menu.classList.remove('show');
-          dd.button.classList.remove('open');
-          dd.button.setAttribute('aria-expanded', 'false');
+      navDropdowns.forEach(function (other) {
+        if (other !== dd && other.menu.classList.contains('show')) {
+          other.pinned = false;
+          other.menu.classList.remove('show');
+          other.button.classList.remove('open');
+          other.button.setAttribute('aria-expanded', 'false');
+          var otherArrow = other.button.querySelector('.dd-arrow');
+          if (otherArrow) otherArrow.textContent = '\u25BC';
         }
       });
-      menu.classList.toggle('show');
-      button.classList.toggle('open');
-      var isOpen = menu.classList.contains('show');
-      button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      var willOpen = !menu.classList.contains('show');
+      dd.pinned = willOpen;
+      setOpen(willOpen);
     });
+
+    if (holder && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      holder.addEventListener('mouseenter', function () {
+        if (dd.pinned) return;
+        setOpen(true);
+      });
+      holder.addEventListener('mouseleave', function () {
+        if (dd.pinned) return;
+        setOpen(false);
+      });
+    }
   }
 
   function closeNavDropdowns() {
     navDropdowns.forEach(function (dd) {
+      dd.pinned = false;
       dd.menu.classList.remove('show');
       dd.button.classList.remove('open');
       dd.button.setAttribute('aria-expanded', 'false');
+      var arrow = dd.button.querySelector('.dd-arrow');
+      if (arrow) arrow.textContent = '\u25BC';
     });
   }
 
