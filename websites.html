@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@MIKS — Websites</title>
+  <meta name="description" content="Website projects by Mikay — portfolio sites, landing pages, and business sites with clean, responsive design.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html">WELCOME GIRLIES!<span>.</span></a>
+      <nav class="menu" id="menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="work.html">Work</a>
+        <li class="dropdown">
+          <button id="servicesBtn" class="dd-btn" aria-haspopup="true" aria-expanded="false">
+            Services <span class="dd-arrow" aria-hidden="true">&#9660;</span>
+          </button>
+          <ul id="servicesMenu" class="dropdown-menu">
+            <li><a href="uiux-design.html">UI/UX Design</a></li>
+            <li><a href="branding-identity.html">Branding &amp; Identity</a></li>
+            <li><a href="frontend-development.html">Frontend Development</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <button id="projectsBtn" class="dd-btn on" aria-haspopup="true" aria-expanded="false">
+            Projects <span class="dd-arrow" aria-hidden="true">&#9660;</span>
+          </button>
+          <ul id="projectsMenu" class="dropdown-menu">
+            <li><a href="mobile-apps.html">Mobile Apps</a></li>
+            <li><a href="websites.html">Websites</a></li>
+            <li><a href="design-systems.html">Design Systems</a></li>
+          </ul>
+        </li>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-pill" href="contact.html">Let's Talk <span class="arrow">→</span></a>
+        <button class="burger" id="burger" aria-label="Toggle menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!--  PAGE HERO  -->
+  <section class="page-hero" style="padding: 64px 0 90px;">
+    <div class="container">
+      <span class="eyebrow reveal">Projects — Websites</span>
+      <h1 class="display reveal reveal-delay-1">Websites that <span class="serif-italic">work.</span></h1>
+      <p class="lead reveal reveal-delay-2" style="margin-top:18px;">
+        Portfolios, landing pages, and business sites — designed and built to look
+        great and convert on every screen.
+      </p>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">What's Included</span>
+        <h2 class="display">Every site <span class="serif-italic">covers.</span></h2>
+      </div>
+      <div class="cards-row">
+        <article class="card bg-lav reveal">
+          <span class="card-num">01</span>
+          <h3>Portfolio Sites</h3>
+          <p>Personal sites that show off your work with bold layouts and clear storytelling.</p>
+          <a class="card-link" href="contact.html" aria-label="Portfolio Sites">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        </article>
+        <article class="card bg-mint reveal reveal-delay-1">
+          <span class="card-num">02</span>
+          <h3>Landing Pages</h3>
+          <p>Focused, single-goal pages that turn visitors into leads or sales.</p>
+          <a class="card-link" href="contact.html" aria-label="Landing Pages">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        </article>
+        <article class="card bg-peach reveal reveal-delay-2">
+          <span class="card-num">03</span>
+          <h3>Business Sites</h3>
+          <p>Multi-page sites that communicate who you are and make it easy to get in touch.</p>
+          <a class="card-link" href="contact.html" aria-label="Business Sites">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        </article>
+        <article class="card bg-sky reveal reveal-delay-3">
+          <span class="card-num">04</span>
+          <h3>SEO Basics</h3>
+          <p>Clean structure, fast loading, and readable content so people can actually find you.</p>
+          <a class="card-link" href="contact.html" aria-label="SEO Basics">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED WORK -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Featured Work</span>
+        <h2 class="display">Sites I've <span class="serif-italic">shipped.</span></h2>
+      </div>
+      <div class="work-grid">
+        <a class="work-item reveal" href="index.html">
+          <div class="work-thumb"><img src="assets/images/work-2.png" alt="This portfolio website"></div>
+          <div class="work-info">
+            <div>
+              <h3>PORTFOLIO SITE</h3>
+              <div class="work-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+            </div>
+            <span class="year">2026</span>
+          </div>
+          <p class="work-desc">This very site — a full portfolio with dropdowns, mobile-first navigation, and smooth reveals, all in vanilla code.</p>
+        </a>
+        <a class="work-item reveal reveal-delay-1" href="work.html">
+          <div class="work-thumb"><img src="assets/images/work-1.png" alt="Groupify web interface"></div>
+          <div class="work-info">
+            <div>
+              <h3>GROUPIFY WEB</h3>
+              <div class="work-tags"><span class="tag">UI/UX</span><span class="tag">HTML</span></div>
+            </div>
+            <span class="year">2025</span>
+          </div>
+          <p class="work-desc">A web dashboard interface for the Groupify task system — designed and laid out for easy team monitoring.</p>
+        </a>
+        <a class="work-item reveal" href="work.html">
+          <div class="work-thumb"><img src="assets/images/work-3.png" alt="Sports catalog layout"></div>
+          <div class="work-info">
+            <div>
+              <h3>CATALOG SITE</h3>
+              <div class="work-tags"><span class="tag">LAYOUT</span><span class="tag">CANVA</span></div>
+            </div>
+            <span class="year">2025</span>
+          </div>
+          <p class="work-desc">A catalog-style site layout with organized, bold visuals built in Canva for the GEE Litera course.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Process</span>
+        <h2 class="display">How a site <span class="serif-italic">gets built.</span></h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <span class="tl-year">01</span>
+          <div>
+            <h3>Design</h3>
+            <p>Structure, mood, and content first — so the site has a clear voice before it has pixels.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <span class="tl-year">02</span>
+          <div>
+            <h3>Build</h3>
+            <p>Responsive pages come together with clean code and careful attention to detail.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <span class="tl-year">03</span>
+          <div>
+            <h3>Launch</h3>
+            <p>Deployed, tested on real devices, and ready for the world to see.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <h2>Need a website? <span class="serif-italic">Let's build one.</span></h2>
+        <a class="btn btn-ghost" href="contact.html">Let's Talk <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <h3>Let's work <span>together.</span></h3>
+        <nav class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="work.html">Work</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Michaela Denise Ong. All rights reserved.</span>
+        <span>Coffee or tea?</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@MIKS — Design Systems</title>
+  <meta name="description" content="Design system projects by Mikay — tokens, components, and documentation that keep products consistent at scale.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html">WELCOME GIRLIES!<span>.</span></a>
+      <nav class="menu" id="menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="work.html">Work</a>
+        <li class="dropdown">
+          <button id="servicesBtn" class="dd-btn" aria-haspopup="true" aria-expanded="false">
+            Services <span class="dd-arrow" aria-hidden="true">&#9660;</span>
+          </button>
+          <ul id="servicesMenu" class="dropdown-menu">
+            <li><a href="uiux-design.html">UI/UX Design</a></li>
+            <li><a href="branding-identity.html">Branding &amp; Identity</a></li>
+            <li><a href="frontend-development.html">Frontend Development</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <button id="projectsBtn" class="dd-btn on" aria-haspopup="true" aria-expanded="false">
+            Projects <span class="dd-arrow" aria-hidden="true">&#9660;</span>
+          </button>
+          <ul id="projectsMenu" class="dropdown-menu">
+            <li><a href="mobile-apps.html">Mobile Apps</a></li>
+            <li><a href="websites.html">Websites</a></li>
+            <li><a href="design-systems.html">Design Systems</a></li>
+          </ul>
+        </li>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-pill" href="contact.html">Let's Talk <span class="arrow">→</span></a>
+        <button class="burger" id="burger" aria-label="Toggle menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!--  PAGE HERO  -->
+  <section class="page-hero" style="padding: 64px 0 90px;">
+    <div class="container">
+      <span class="eyebrow reveal">Projects — Design Systems</span>
+      <h1 class="display reveal reveal-delay-1">One system, <span class="serif-italic">every screen.</span></h1>
+      <p class="lead reveal reveal-delay-2" style="margin-top:18px;">
+        Tokens, components, and documentation that keep products consistent —
+        at any team size and at any scale.
+      </p>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">What's Included</span>
+        <h2 class="display">Every system <span class="serif-italic">covers.</span></h2>
+      </div>
+      <div class="cards-row">
+        <article class="card bg-lav reveal">
+          <span class="card-num">01</span>
+          <h3>Design Tokens</h3>
+          <p>Color, type, spacing, and radius defined once — so every screen stays in sync.</p>
+          <a class="card-link" href="contact.html" aria-label="Design Tokens">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        </article>
+        <article class="card bg-mint reveal reveal-delay-1">
+          <span class="card-num">02</span>
+          <h3>Core Components</h3>
+          <p>Buttons, inputs, cards, and navigation built once and reused everywhere.</p>
+          <a class="card-link" href="contact.html" aria-label="Core Components">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        </article>
+        <article class="card bg-peach reveal reveal-delay-2">
+          <span class="card-num">03</span>
+          <h3>Live Documentation</h3>
+          <p>One clear place to read how and when to use each piece of the system.</p>
+          <a class="card-link" href="contact.html" aria-label="Live Documentation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        </article>
+        <article class="card bg-sky reveal reveal-delay-3">
+          <span class="card-num">04</span>
+          <h3>Versioning &amp; Handoff</h3>
+          <p>Organized, export-ready files so designers and developers always work from the latest.</p>
+          <a class="card-link" href="contact.html" aria-label="Versioning and Handoff">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED WORK -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Featured Work</span>
+        <h2 class="display">Systems I've <span class="serif-italic">crafted.</span></h2>
+      </div>
+      <div class="work-grid">
+        <a class="work-item reveal" href="work.html">
+          <div class="work-thumb"><img src="assets/images/work-1.png" alt="Groupify design system"></div>
+          <div class="work-info">
+            <div>
+              <h3>GROUPIFY SYSTEM</h3>
+              <div class="work-tags"><span class="tag">TOKENS</span><span class="tag">UI KIT</span></div>
+            </div>
+            <span class="year">2025</span>
+          </div>
+          <p class="work-desc">A reusable set of colors, type, and components behind the Groupify task management interface.</p>
+        </a>
+        <a class="work-item reveal reveal-delay-1" href="index.html">
+          <div class="work-thumb"><img src="assets/images/work-2.png" alt="This site's style system"></div>
+          <div class="work-info">
+            <div>
+              <h3>PORTFOLIO KIT</h3>
+              <div class="work-tags"><span class="tag">CSS VARS</span><span class="tag">COMPONENTS</span></div>
+            </div>
+            <span class="year">2026</span>
+          </div>
+          <p class="work-desc">The tokens and components powering this site — CSS variables, buttons, cards, and dropdowns used across every page.</p>
+        </a>
+        <a class="work-item reveal" href="work.html">
+          <div class="work-thumb"><img src="assets/images/work-3.png" alt="Sports catalog system"></div>
+          <div class="work-info">
+            <div>
+              <h3>CATALOG TEMPLATE</h3>
+              <div class="work-tags"><span class="tag">LAYOUT</span><span class="tag">CANVA</span></div>
+            </div>
+            <span class="year">2025</span>
+          </div>
+          <p class="work-desc">A repeatable template with consistent spacing and styles — a study in reusable layouts built with Canva.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILD STEPS -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Build Steps</span>
+        <h2 class="display">How I <span class="serif-italic">build systems.</span></h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <span class="tl-year">01</span>
+          <div>
+            <h3>Audit</h3>
+            <p>I review existing screens, find inconsistencies, and list every repeated pattern.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <span class="tl-year">02</span>
+          <div>
+            <h3>Structure</h3>
+            <p>Tokens are defined, components are composed, and rules are documented in plain language.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <span class="tl-year">03</span>
+          <div>
+            <h3>Govern</h3>
+            <p>Share the system, keep it versioned, and make it easy to update as the product grows.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <h2>Keep your product <span class="serif-italic">consistent?</span></h2>
+        <a class="btn btn-ghost" href="contact.html">Let's Talk <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <h3>Let's work <span>together.</span></h3>
+        <nav class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="work.html">Work</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Michaela Denise Ong. All rights reserved.</span>
+        <span>Coffee or tea?</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

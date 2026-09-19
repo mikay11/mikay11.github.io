@@ -1048,7 +1048,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .dropdown { position: static; }
   .dd-btn { font-size: 0.95rem; white-space: nowrap; padding: 6px 2px; }
   .dd-btn::after { width: 0; }
-  .dd-btn.open { color: var(--pink); }
+.dd-btn.open { color: var(--pink); }
+.dd-btn.on { color: var(--pink); }
+.dd-btn.on::after { width: 100%; }
 
   .dropdown-menu {
     position: absolute;
