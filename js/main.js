@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     button.addEventListener('click', function (event) {
       event.stopPropagation();
+      var wasOpen = menu.classList.contains('show');
       navDropdowns.forEach(function (other) {
         if (other !== dd && other.menu.classList.contains('show')) {
           other.pinned = false;
@@ -50,9 +51,9 @@ document.addEventListener('DOMContentLoaded', function () {
           if (otherArrow) otherArrow.textContent = '\u25BC';
         }
       });
-      var willOpen = !menu.classList.contains('show');
-      dd.pinned = willOpen;
-      setOpen(willOpen);
+      var stayOpen = (wasOpen && !dd.pinned) ? true : !wasOpen;
+      dd.pinned = stayOpen;
+      setOpen(stayOpen);
     });
 
     if (holder && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
