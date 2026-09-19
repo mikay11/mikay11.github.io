@@ -29,9 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var button = document.querySelector(buttonId);
     var menu = document.querySelector(menuId);
     if (!button || !menu) return;
-    var holder = button.closest('.dropdown');
     var arrow = button.querySelector('.dd-arrow');
-    var dd = { button: button, menu: menu, pinned: false };
+    var dd = { button: button, menu: menu };
     navDropdowns.push(dd);
 
     function setOpen(open) {
@@ -43,10 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     button.addEventListener('click', function (event) {
       event.stopPropagation();
-      var wasOpen = menu.classList.contains('show');
       navDropdowns.forEach(function (other) {
-        if (other !== dd && other.menu.classList.contains('show')) {
-          other.pinned = false;
+        if (other !== dd) {
           other.menu.classList.remove('show');
           other.button.classList.remove('open');
           other.button.setAttribute('aria-expanded', 'false');
@@ -54,26 +51,13 @@ document.addEventListener('DOMContentLoaded', function () {
           if (otherArrow) otherArrow.textContent = '\u25BC';
         }
       });
-      var stayOpen = (wasOpen && !dd.pinned) ? true : !wasOpen;
-      dd.pinned = stayOpen;
-      setOpen(stayOpen);
+      var willOpen = !menu.classList.contains('show');
+      setOpen(willOpen);
     });
-
-    if (holder && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-      holder.addEventListener('mouseenter', function () {
-        if (dd.pinned) return;
-        setOpen(true);
-      });
-      holder.addEventListener('mouseleave', function () {
-        if (dd.pinned) return;
-        setOpen(false);
-      });
-    }
   }
 
   function closeNavDropdowns() {
     navDropdowns.forEach(function (dd) {
-      dd.pinned = false;
       dd.menu.classList.remove('show');
       dd.button.classList.remove('open');
       dd.button.setAttribute('aria-expanded', 'false');
