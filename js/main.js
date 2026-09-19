@@ -19,26 +19,49 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ---------- Navbar dropdown (Services) ----------
-  var dropdownButton = document.querySelector('#dropdownBtn');
-  var dropdownMenu = document.querySelector('#dropdownMenu');
-  if (dropdownButton && dropdownMenu && !window.__navDropdownBound) {
-    window.__navDropdownBound = true;
+  // ---------- Navbar dropdowns (Services + Projects) ----------
+  var navDropdowns = [];
 
-    dropdownButton.addEventListener('click', function (event) {
+  function bindDropdown(buttonId, menuId) {
+    var button = document.querySelector(buttonId);
+    var menu = document.querySelector(menuId);
+    if (!button || !menu) return;
+    navDropdowns.push({ button: button, menu: menu });
+
+    button.addEventListener('click', function (event) {
       event.stopPropagation();
-      dropdownMenu.classList.toggle('show');
-      dropdownButton.classList.toggle('open');
-      var isOpen = dropdownMenu.classList.contains('show');
-      dropdownButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      navDropdowns.forEach(function (dd) {
+        if (dd.button !== button && dd.menu.classList.contains('show')) {
+          dd.menu.classList.remove('show');
+          dd.button.classList.remove('open');
+          dd.button.setAttribute('aria-expanded', 'false');
+        }
+      });
+      menu.classList.toggle('show');
+      button.classList.toggle('open');
+      var isOpen = menu.classList.contains('show');
+      button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
+  }
+
+  function closeNavDropdowns() {
+    navDropdowns.forEach(function (dd) {
+      dd.menu.classList.remove('show');
+      dd.button.classList.remove('open');
+      dd.button.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  if (!window.__navDropdownBound) {
+    window.__navDropdownBound = true;
+    bindDropdown('#servicesBtn', '#servicesMenu');
+    bindDropdown('#projectsBtn', '#projectsMenu');
 
     document.addEventListener('click', function (event) {
-      if (!dropdownMenu.contains(event.target) && !dropdownButton.contains(event.target)) {
-        dropdownMenu.classList.remove('show');
-        dropdownButton.classList.remove('open');
-        dropdownButton.setAttribute('aria-expanded', 'false');
-      }
+      var insideAny = navDropdowns.some(function (dd) {
+        return dd.button.contains(event.target) || dd.menu.contains(event.target);
+      });
+      if (!insideAny) closeNavDropdowns();
     });
   }
 
