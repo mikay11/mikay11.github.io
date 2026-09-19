@@ -996,13 +996,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   max-width: 62ch;
 }
 
-/* ---- MOBILE/TABLET: no burger, no drawer. The navbar keeps the same
-   horizontal row as the desktop (links wrap if they run out of room),
-   and a dropdown drops as a full-width panel under the bar so nothing
-   is clipped and the row never shifts. Only the current page link gets
-   the active underline. ---- */
+/* ---- MOBILE/TABLET: the navbar looks the same as desktop — logo on
+   the left, the links in one horizontal row to its right. No burger,
+   no drawer. If the row is too wide it scrolls sideways (hidden
+   scrollbar). Each dropdown opens directly under its own link, is
+   clamped to the screen width, and only one is open at a time. ---- */
 @media (max-width: 860px) {
-  .nav-inner { flex-wrap: wrap; gap: 10px 14px; padding: 12px 0; }
+  .nav-inner { gap: 12px; padding: 12px 0; }
   .logo { flex: 0 0 auto; font-size: 1.05rem; white-space: nowrap; }
 
   .nav-actions { display: none; }
@@ -1013,20 +1013,25 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     inset: auto;
     background: none;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
     align-items: center;
-    gap: 6px 18px;
+    gap: 16px;
     z-index: auto;
     font-size: 1rem;
     transform: none;
     transition: none;
-    flex: 1 1 100%;
-    order: 2;
-    width: 100%;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-left: auto;
+    overflow-x: auto;
+    scrollbar-width: none;
     padding: 2px 0;
   }
+  .menu::-webkit-scrollbar { display: none; }
+  .menu > * { flex: 0 0 auto; white-space: nowrap; }
   .menu.open { transform: none; }
+
   .menu a {
     font-family: inherit;
     text-transform: none;
@@ -1049,22 +1054,21 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     position: absolute;
     top: 100%;
     left: 0;
-    right: 0;
-    width: 100%;
-    min-width: 0;
+    right: auto;
+    min-width: 190px;
+    max-width: calc(100vw - 24px);
     margin: 8px 0 0;
-    padding: 8px 16px;
+    padding: 8px;
     transform: none;
     background: var(--white);
     border: 1px solid var(--line);
-    border-top: 0;
-    border-radius: 0 0 16px 16px;
+    border-radius: 14px;
     box-shadow: 0 18px 32px rgba(26, 26, 26, 0.16);
   }
   .dropdown-menu a {
     font-family: inherit;
     text-transform: none;
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     letter-spacing: 0;
     color: var(--ink);
     padding: 9px 14px;
@@ -1075,9 +1079,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .dropdown-menu a:hover { background: var(--pink); color: var(--white); }
 }
 
-@media (max-width: 560px) {
-  .logo { font-size: 0.9rem; }
-  .menu { gap: 6px 12px; }
+@media (max-width: 768px) {
+  .nav-inner { gap: 10px; padding: 10px 0; }
+  .logo { font-size: 0.95rem; }
+  .menu { gap: 12px; }
   .menu a,
   .dd-btn { font-size: 0.88rem; }
+}
+
+@media (max-width: 560px) {
+  .logo { font-size: 0.85rem; }
+  .menu { gap: 10px; }
 }

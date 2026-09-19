@@ -53,7 +53,23 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       var willOpen = !menu.classList.contains('show');
       setOpen(willOpen);
+      if (willOpen) positionMobileDropdown(button, menu);
     });
+  }
+
+  function positionMobileDropdown(button, menu) {
+    if (!window.matchMedia('(max-width: 860px)').matches) return;
+    var header = button.closest('.nav');
+    if (!header) return;
+    var margin = 12;
+    var hRect = header.getBoundingClientRect();
+    var bRect = button.getBoundingClientRect();
+    var mRect = menu.getBoundingClientRect();
+    var left = bRect.left - hRect.left + (bRect.width - mRect.width) / 2;
+    var min = margin - hRect.left;
+    var max = window.innerWidth - margin - mRect.width - hRect.left;
+    menu.style.left = Math.min(Math.max(left, min), max) + 'px';
+    menu.style.right = 'auto';
   }
 
   function closeNavDropdowns() {
