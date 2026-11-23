@@ -1,0 +1,118 @@
+body.work-page {
+  background:
+    radial-gradient(circle at 8% 10%, rgba(255, 182, 212, 0.35), transparent 38%),
+    radial-gradient(circle at 92% 28%, rgba(255, 214, 232, 0.4), transparent 42%),
+    radial-gradient(circle at 15% 80%, rgba(255, 182, 212, 0.3), transparent 40%),
+    radial-gradient(circle at 88% 88%, rgba(255, 214, 232, 0.35), transparent 40%),
+    linear-gradient(180deg, #fff7fa 0%, #ffeef5 50%, #fff9fc 100%);
+}
+
+body.work-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 122, 176, 0.12) 2.5px, transparent 2.5px);
+  background-size: 36px 36px;
+}
+
+body.work-page::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(rgba(255, 105, 180, 0.45) 4px, transparent 4px),
+    radial-gradient(rgba(255, 192, 218, 0.6) 3px, transparent 3px),
+    radial-gradient(rgba(255, 105, 180, 0.4) 2px, transparent 2px),
+    radial-gradient(rgba(255, 192, 218, 0.55) 2.5px, transparent 2.5px);
+  background-position: 6% 22%, 90% 12%, 76% 64%, 12% 66%, 58% 34%, 34% 84%, 66% 8%, 22% 40%, 84% 88%, 44% 56%;
+  background-size: 18px 18px, 26px 26px, 30px 30px, 22px 22px;
+  background-repeat: no-repeat;
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+body.work-page .page-hero {
+  position: relative;
+}
+
+body.work-page .page-hero::before {
+  content: '💗';
+  position: absolute;
+  top: 18px;
+  left: -30px;
+  font-size: 2.4rem;
+  animation: float-heart 5s ease-in-out infinite;
+}
+
+body.work-page .page-hero::after {
+  content: '💖';
+  position: absolute;
+  bottom: 6px;
+  right: 4%;
+  font-size: 2rem;
+  animation: float-heart 6s ease-in-out 1s infinite;
+}
+
+@keyframes float-heart {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-8deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(8deg);
+  }
+}
+
+body.work-page .page-hero .display {
+  text-shadow: 0 4px 24px rgba(255, 105, 180, 0.35);
+}
+
+body.work-page .video-wrap {
+  box-shadow: 0 18px 50px rgba(255, 105, 180, 0.35);
+  outline: 1px solid rgba(255, 182, 212, 0.6);
+}
+
+body.work-page .work-section-title::after {
+  content: ' 🌸';
+  font-size: 1.3rem;
+}
+
+body.work-page .work-section-head {
+  border-bottom-color: rgba(255, 105, 180, 0.45);
+}
+
+body.work-page .filter-btn:hover {
+  border-color: var(--pink);
+  box-shadow: 0 4px 14px rgba(255, 105, 180, 0.25);
+}
+
+body.work-page .filter-btn.active {
+  background: var(--pink);
+  border-color: var(--pink);
+}
+
+body.work-page .work-item .work-thumb {
+  box-shadow: 0 8px 24px rgba(255, 122, 176, 0.16);
+}
+
+body.work-page .work-tags .tag {
+  background: #ffeaf3;
+  color: #d63384;
+}
+
+body.work-page .footer {
+  border-top: 3px solid #ff9ecb;
+}

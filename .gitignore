@@ -1,1 +1,5 @@
-assets/videos/fb-video.mp4
+node_modules/
+dist/
+.vite/
+.DS_Store
+public/assets/videos/fb-video.mp4
